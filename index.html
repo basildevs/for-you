@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#07030e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Happy Birthday Kunju (Nandini) ❤️</title>
+  
+  <!-- Tailwind CSS CDN for utility styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Canvas Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-[#07030e] text-white select-none overflow-hidden touch-none">
+
+  <!-- Background Space Canvas (Twinkling Stars, Nebulas & Shooting Stars) -->
+  <canvas id="space-canvas"></canvas>
+
+  <!-- Foreground FX Canvas (Confetti, Sparkles, Bow Drawing) -->
+  <canvas id="fx-canvas"></canvas>
+
+  <!-- Audio Control HUD -->
+  <div class="audio-hud" id="audio-toggle" title="Toggle Music">
+    <div class="music-wave" id="audio-wave">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <span class="text-xs font-medium text-pink-200" id="audio-label">Music: On</span>
+  </div>
+
+  <!-- Progress Dots Indicator -->
+  <div class="chapter-progress" id="chapter-dots">
+    <!-- Generated dynamically via script.js -->
+  </div>
+
+  <!-- Main Viewport Container -->
+  <main class="app-viewport">
+
+    <!-- ==========================================
+         LOCK SCREEN / PASSCODE PROTECTION
+         ========================================== -->
+    <section class="chapter-section active" id="lock-screen">
+      <div class="glass-card flex flex-col items-center">
+        <!-- Lock Icon with Glow -->
+        <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-rose-500 to-amber-400 p-0.5 shadow-[0_0_25px_rgba(244,63,94,0.6)] mb-3 flex items-center justify-center animate-pulse">
+          <div class="w-full h-full bg-[#0d0718] rounded-full flex items-center justify-center text-2xl">
+            🔒
+          </div>
+        </div>
+
+        <span class="text-[11px] uppercase tracking-[0.25em] text-pink-300 font-bold mb-1">Private Surprise</span>
+        <h2 class="text-xl font-bold text-white mb-1">For Kunju Only 💖</h2>
+        <p class="text-xs text-slate-300 text-center mb-4">Enter the 6-digit secret passcode to unlock your birthday world:</p>
+
+        <!-- PIN Dots Display -->
+        <div class="flex gap-3 mb-4" id="pin-dots">
+          <div class="pin-dot" data-idx="0"></div>
+          <div class="pin-dot" data-idx="1"></div>
+          <div class="pin-dot" data-idx="2"></div>
+          <div class="pin-dot" data-idx="3"></div>
+          <div class="pin-dot" data-idx="4"></div>
+          <div class="pin-dot" data-idx="5"></div>
+        </div>
+
+        <!-- Hidden input for mobile keyboard / typing -->
+        <input type="password" id="passcode-input" maxlength="6" inputmode="numeric" pattern="[0-9]*" class="sr-only" autofocus />
+
+        <p class="text-xs text-rose-300 h-5 font-semibold transition-all" id="lock-status"></p>
+
+        <!-- Touch Keypad for Mobile -->
+        <div class="grid grid-cols-3 gap-2.5 w-full max-w-[260px] my-2">
+          <button class="keypad-btn" data-key="1">1</button>
+          <button class="keypad-btn" data-key="2">2</button>
+          <button class="keypad-btn" data-key="3">3</button>
+          <button class="keypad-btn" data-key="4">4</button>
+          <button class="keypad-btn" data-key="5">5</button>
+          <button class="keypad-btn" data-key="6">6</button>
+          <button class="keypad-btn" data-key="7">7</button>
+          <button class="keypad-btn" data-key="8">8</button>
+          <button class="keypad-btn" data-key="9">9</button>
+          <button class="keypad-btn text-rose-300" data-key="clear">⌫</button>
+          <button class="keypad-btn" data-key="0">0</button>
+          <button class="keypad-btn text-amber-300 font-bold" data-key="enter">✓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 0: PROLOGUE / WELCOME SCREEN
+         ========================================== -->
+    <section class="chapter-section" id="chapter-0">
+      <div class="glass-card">
+        <!-- Floating Gift Box Icon -->
+        <div class="gift-box-anim">
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_10px_25px_rgba(255,75,139,0.7)]">
+            <defs>
+              <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f43f5e"/>
+                <stop offset="100%" stop-color="#be123c"/>
+              </linearGradient>
+              <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fef08a"/>
+                <stop offset="100%" stop-color="#f59e0b"/>
+              </linearGradient>
+            </defs>
+            <!-- Box Body -->
+            <rect x="20" y="42" width="60" height="48" rx="8" fill="url(#boxGrad)"/>
+            <!-- Box Lid -->
+            <rect x="15" y="32" width="70" height="14" rx="4" fill="#fb7185"/>
+            <!-- Ribbon Vertical -->
+            <rect x="44" y="32" width="12" height="58" fill="url(#ribbonGrad)"/>
+            <!-- Ribbon Bow -->
+            <circle cx="42" cy="24" r="10" fill="none" stroke="url(#ribbonGrad)" stroke-width="6"/>
+            <circle cx="58" cy="24" r="10" fill="none" stroke="url(#ribbonGrad)" stroke-width="6"/>
+            <circle cx="50" cy="26" r="6" fill="#f59e0b"/>
+          </svg>
+        </div>
+
+        <p class="text-xs uppercase tracking-[0.25em] text-pink-300 font-semibold mb-2">A Birthday Surprise For</p>
+        <h1 class="fancy-name" id="hero-name">Nandini</h1>
+        <p class="text-sm text-pink-200/80 mb-6" id="hero-tagline">My dearest Kunju ✨</p>
+
+        <button class="btn-glow w-full" id="btn-start-surprise">
+          <span>Unwrap Surprise 🎁</span>
+        </button>
+
+        <div class="mt-4 flex items-center justify-center gap-2 text-xs text-slate-400">
+          <span>🔊</span>
+          <span>Sound on &amp; tap to begin the magic</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 1: CONSTELLATION 'N' CONNECT
+         ========================================== -->
+    <section class="chapter-section" id="chapter-1">
+      <div class="glass-card flex flex-col items-center">
+        <span class="text-xs px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full border border-pink-500/30 mb-2">
+          Chapter 1 • Star Map
+        </span>
+        <h2 class="text-xl font-bold text-white mb-1">Draw The Starlight 'N'</h2>
+        <p class="text-xs text-slate-300 text-center mb-2">
+          Connect all glowing stars in sequence (1 → 2 → 3 → 4) to reveal her celestial initial!
+        </p>
+
+        <!-- Constellation Board -->
+        <div id="constellation-board" class="relative w-[280px] h-[250px] my-2 bg-slate-950/40 rounded-2xl border border-white/10">
+          <svg id="constellation-svg" class="absolute inset-0 w-full h-full pointer-events-none">
+            <!-- Dynamic lines rendered by JS -->
+          </svg>
+          <!-- 4 Star nodes forming the letter 'N' -->
+          <div class="star-node" data-idx="1" style="top: 80%; left: 25%;"><span class="text-[10px] font-bold text-amber-900">1</span></div>
+          <div class="star-node" data-idx="2" style="top: 20%; left: 25%;"><span class="text-[10px] font-bold text-amber-900">2</span></div>
+          <div class="star-node" data-idx="3" style="top: 80%; left: 75%;"><span class="text-[10px] font-bold text-amber-900">3</span></div>
+          <div class="star-node" data-idx="4" style="top: 20%; left: 75%;"><span class="text-[10px] font-bold text-amber-900">4</span></div>
+        </div>
+
+        <p class="text-xs text-pink-300 h-5" id="constellation-status">Tap star 1 to begin...</p>
+
+        <button class="btn-glow mt-3 opacity-50 pointer-events-none" id="btn-next-chapter-1">
+          <span>Continue Journey ✨</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 2: CUPID'S ARROW MINI-GAME
+         ========================================== -->
+    <section class="chapter-section" id="chapter-2">
+      <div class="glass-card flex flex-col items-center justify-between min-h-[460px]">
+        <div>
+          <span class="text-xs px-3 py-1 bg-rose-500/20 text-rose-300 rounded-full border border-rose-500/30">
+            Chapter 2 • Cupid's Shot
+          </span>
+          <h2 class="text-xl font-bold text-white mt-2">Shoot Straight To My Heart</h2>
+          <p class="text-xs text-slate-300">Pull back the bow and release to strike the heart!</p>
+        </div>
+
+        <!-- Target Beating Heart -->
+        <div class="target-heart" id="target-heart">
+          <svg viewBox="0 0 100 100" class="w-full h-full filter drop-shadow-[0_0_20px_#ff4b8b]">
+            <path d="M50 88 C20 60 5 40 5 25 C5 10 18 2 30 2 C40 2 46 8 50 15 C54 8 60 2 70 2 C82 2 95 10 95 25 C95 40 80 60 50 88 Z" fill="#ff2a6d"/>
+          </svg>
+        </div>
+
+        <!-- Interactive Bow & Arrow -->
+        <div class="bow-container flex flex-col items-center" id="bow-control">
+          <div class="text-xs text-amber-300/80 mb-2 animate-bounce" id="bow-hint">👇 Drag down &amp; release!</div>
+          <svg viewBox="0 0 140 140" class="w-28 h-28">
+            <!-- Bow Arc -->
+            <path d="M 20 50 Q 70 10 120 50" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <!-- Bowstring -->
+            <path id="bowstring" d="M 20 50 Q 70 50 120 50" stroke="#fef08a" stroke-width="2" fill="none"/>
+            <!-- Arrow -->
+            <g id="arrow-graphic" transform="translate(0, 0)">
+              <line x1="70" y1="50" x2="70" y2="10" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/>
+              <polygon points="63,16 77,16 70,2" fill="#ef4444"/>
+              <polygon points="65,48 75,48 70,55" fill="#f59e0b"/>
+            </g>
+          </svg>
+        </div>
+
+        <button class="btn-glow hidden w-full" id="btn-next-chapter-2">
+          <span>Step Into Bloom 🌸</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 3: BLOOMING TREE OF HEARTS
+         ========================================== -->
+    <section class="chapter-section" id="chapter-3">
+      <div class="glass-card flex flex-col items-center">
+        <span class="text-xs px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full border border-pink-500/30 mb-1">
+          Chapter 3 • In Full Bloom
+        </span>
+        <h2 class="fancy-name text-3xl mb-0">Happy Birthday, Kunju!</h2>
+        <p class="text-xs text-amber-300 font-semibold mb-2">✨ November 5th — A Day Worth Celebrating ✨</p>
+
+        <!-- Canvas Tree of Hearts -->
+        <canvas id="tree-canvas" width="340" height="230"></canvas>
+
+        <p class="text-xs text-slate-200 mt-2 text-center italic" id="tree-quote">
+          "Every blossom on this tree represents a reason why this world is so much more beautiful with you in it."
+        </p>
+
+        <button class="btn-glow mt-4 w-full" id="btn-next-chapter-3">
+          <span>Bake Something Sweet 🎂</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 4: BIRTHDAY CAKE & MAKE A WISH
+         ========================================== -->
+    <section class="chapter-section" id="chapter-4">
+      <div class="glass-card flex flex-col items-center">
+        <span class="text-xs px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full border border-amber-500/30 mb-2">
+          Chapter 4 • Make A Wish
+        </span>
+        <h2 class="text-xl font-bold text-white mb-1">Time For Your Wish 🎂</h2>
+        <p class="text-xs text-slate-300 text-center mb-3">
+          Make a wish in your heart, then tap the button below to blow out the candles!
+        </p>
+
+        <!-- Interactive 3D Tiered Cake -->
+        <div class="cake-wrapper">
+          <!-- Top Tier with firmly rooted candles -->
+          <div class="cake-tier-2">
+            <div class="candles-row">
+              <div class="candle"><div class="candle-flame"></div></div>
+              <div class="candle"><div class="candle-flame"></div></div>
+              <div class="candle"><div class="candle-flame"></div></div>
+            </div>
+            <div class="cake-cream"></div>
+            <div class="cake-toppings">
+              <span>🍓</span>
+              <span>✨</span>
+              <span>🍓</span>
+            </div>
+          </div>
+          <!-- Bottom Tier -->
+          <div class="cake-tier">
+            <div class="cake-cream"></div>
+            <div class="cake-sprinkles">
+              <span>✨</span>
+              <span>💖</span>
+              <span>✨</span>
+            </div>
+          </div>
+          <!-- Plate -->
+          <div class="cake-plate"></div>
+        </div>
+
+        <p class="text-xs text-pink-300 mt-2 h-5 font-semibold" id="cake-status">✨ Flames are glowing warm &amp; bright...</p>
+
+        <div class="flex gap-2 w-full mt-3">
+          <button class="btn-glow flex-1" id="btn-blow-candles">
+            <span>💨 Blow Out Candles!</span>
+          </button>
+          <button class="btn-glow hidden flex-1" id="btn-next-chapter-4">
+            <span>Pop Balloons 🎈</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 5: REASONS WHY I LOVE YOU (BALLOONS)
+         ========================================== -->
+    <section class="chapter-section" id="chapter-5">
+      <div class="glass-card flex flex-col items-center h-[520px] max-h-[90vh]">
+        <span class="text-xs px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full border border-purple-500/30 mb-1">
+          Chapter 5 • Why You're Loved
+        </span>
+        <h2 class="text-lg font-bold text-white mb-1">Pop The Floating Balloons 🎈</h2>
+        <p class="text-xs text-slate-300 text-center mb-2">
+          Tap each floating balloon to unlock a hidden reason why you mean the world to me:
+        </p>
+
+        <!-- Floating Balloons Sky -->
+        <div class="balloons-sky w-full h-[90px] flex items-center justify-around my-1" id="balloons-container">
+          <!-- Dynamically generated balloons -->
+        </div>
+
+        <!-- Scrollable Reasons List -->
+        <div class="reasons-list flex-1 w-full my-2" id="reasons-container">
+          <!-- Revealed cards will slide into here -->
+        </div>
+
+        <button class="btn-glow w-full mt-2" id="btn-next-chapter-5">
+          <span>Walk Down Memory Lane 📸</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 6: MEMORY LANE POLAROIDS
+         ========================================== -->
+    <section class="chapter-section" id="chapter-6">
+      <div class="glass-card flex flex-col items-center">
+        <span class="text-xs px-3 py-1 bg-rose-500/20 text-rose-300 rounded-full border border-rose-500/30 mb-1">
+          Chapter 6 • Memory Lane
+        </span>
+        <h2 class="text-xl font-bold text-white mb-1">Our Beautiful Moments 📸</h2>
+        <p class="text-xs text-slate-300 text-center mb-2">Swipe or tap Next to look through our cherished memories</p>
+
+        <!-- Hanging Fairy Light Polaroid Carousel -->
+        <div class="memory-carousel" id="polaroid-carousel">
+          <div class="fairy-lights-string">
+            <div class="bulb"></div>
+            <div class="bulb"></div>
+            <div class="bulb"></div>
+            <div class="bulb"></div>
+            <div class="bulb"></div>
+          </div>
+          <!-- Polaroids generated via script.js -->
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="flex items-center justify-between w-full mt-2 px-4">
+          <button class="btn-secondary text-xs px-4 py-2" id="btn-prev-memory">← Previous</button>
+          <span class="text-xs text-slate-300 font-medium" id="memory-counter">1 / 5</span>
+          <button class="btn-secondary text-xs px-4 py-2" id="btn-next-memory">Next →</button>
+        </div>
+
+        <button class="btn-glow mt-4 w-full" id="btn-next-chapter-6">
+          <span>Read My Letter 💌</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 7: WAX-SEALED LOVE LETTER
+         ========================================== -->
+    <section class="chapter-section" id="chapter-7">
+      <div class="glass-card flex flex-col items-center relative overflow-hidden min-h-[480px]">
+        <span class="text-xs px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full border border-amber-500/30 mb-1">
+          Chapter 7 • Sealed With Love
+        </span>
+        <h2 class="text-xl font-bold text-white mb-1">One Last Thing For You...</h2>
+        <p class="text-xs text-slate-300 text-center mb-3">Tap the wax seal 'N' to open your private letter</p>
+
+        <!-- Envelope & Letter Container -->
+        <div class="envelope-stage" id="envelope-stage">
+          <div class="envelope-wrapper" id="envelope-box">
+            <div class="envelope-flap"></div>
+            <div class="wax-seal" id="wax-seal-btn" title="Tap to Open"></div>
+          </div>
+
+          <!-- Unfolded Handwritten Letter -->
+          <div class="letter-parchment" id="letter-content">
+            <div class="letter-title" id="letter-header">Dear Nandini (My Kunju),</div>
+            <div class="letter-body" id="letter-body">
+              <!-- Paragraphs injected via config.js -->
+            </div>
+            <div class="letter-signature" id="letter-sig">
+              With all my love,<br/>
+              <span class="font-bold">Forever &amp; Always Yours ❤️</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-glow mt-4 w-full" id="btn-next-chapter-7">
+          <span>Grand Finale Fireworks 🎆</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 8: MIDNIGHT SKY & HEART FIREWORKS
+         ========================================== -->
+    <section class="chapter-section" id="chapter-8">
+      <div class="glass-card flex flex-col items-center grand-celebration">
+        <span class="text-xs px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full border border-pink-500/30 mb-2">
+          Grand Celebration ✨
+        </span>
+        
+        <h1 class="fancy-name text-4xl mb-1">Happy Birthday Nandini!</h1>
+        <p class="text-sm text-pink-200 mb-4">May your year be as radiant &amp; special as you are, my Kunju ❤️</p>
+
+        <div class="p-4 bg-white/5 border border-white/10 rounded-2xl w-full text-center my-2">
+          <p class="text-xs text-amber-300 font-medium mb-1">✨ Interactive Fireworks Sky ✨</p>
+          <p class="text-[11px] text-slate-300">Tap anywhere on your screen to burst sparkling heart fireworks!</p>
+        </div>
+
+        <div class="flex gap-2 w-full mt-4">
+          <button class="btn-glow flex-1" id="btn-fireworks-burst">
+            <span>🎆 Launch Fireworks</span>
+          </button>
+          <button class="btn-secondary flex-1" id="btn-replay-all">
+            <span>🔄 Replay Story</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Quick Floating Heart Button for instant love burst -->
+  <div class="floating-heart-btn" id="btn-love-burst" title="Send a Heart">💖</div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
