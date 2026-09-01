@@ -857,10 +857,8 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `
         <div class="tape"></div>
         <div class="polaroid-img-box">
-          <img src="${mem.image}" alt="${mem.caption}" loading="lazy"/>
+          <img src="${mem.image}" alt="Special Memory" loading="lazy"/>
         </div>
-        <div class="polaroid-caption">${mem.caption}</div>
-        <div class="text-[10px] text-slate-400 text-center mt-1">${mem.date}</div>
       `;
       carousel.appendChild(card);
     });
