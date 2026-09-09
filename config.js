@@ -1,6 +1,6 @@
 /**
  * ==========================================================
- * 5-YEAR RELATIONSHIP & BIRTHDAY SURPRISE CONFIGURATION
+ * 5-YEAR RELATIONSHIP ANNIVERSARY CELEBRATION CONFIGURATION
  * FOR NANDINI (KUNJUTI) FROM BASIL (KUNJUTAN)
  * ==========================================================
  */
@@ -20,16 +20,14 @@ const CONFIG = {
     hisPetName: "Kunjutan",
     herPetName: "Kunjuti",
     anniversaryYears: 5,
-    birthday: "November 5",
-    tagline: "5 Magical Years Together & Happy Birthday to My Kunjuti ✨",
+    tagline: "5 Magical Years Together • Basil & Nandini ✨",
     startYear: "2021",
     currentYear: "2026"
   },
 
   recipient: {
     name: "Nandini",
-    petName: "Kunjuti",
-    birthday: "November 5"
+    petName: "Kunjuti"
   },
 
   sender: {
@@ -187,7 +185,7 @@ const CONFIG = {
         { id: "y5_1", src: "assets/photos/y5_1.svg", caption: "5 years of pure bliss" },
         { id: "y5_2", src: "assets/photos/y5_2.svg", caption: "Still giving me butterflies" },
         { id: "y5_3", src: "assets/photos/y5_3.svg", caption: "Growing together daily" },
-        { id: "y5_4", src: "assets/photos/y5_4.svg", caption: "Happy Birthday my love" },
+        { id: "y5_4", src: "assets/photos/y5_4.svg", caption: "5 years of holding you close" },
         { id: "y5_5", src: "assets/photos/y5_5.svg", caption: "To our next 50 years" }
       ]
     }
@@ -218,28 +216,28 @@ const CONFIG = {
     {
       year: 5,
       title: "Year 5 • My Today, Tomorrow & Forever ♾️",
-      text: "5 full years of choosing you every day. Today on your birthday, I fall in love with you all over again."
+      text: "5 full years of choosing you every day. Today, celebrating our 5th anniversary, I fall in love with you all over again."
     }
   ],
 
-  // Task 6: Birthday Cake with 5 Candles
+  // Task 6: Anniversary Cake with 5 Candles
   cake: {
-    title: "Task 6 • 5 Candles For 5 Years & A Birthday Wish 🎂",
-    subtitle: "5 candles glowing for our 5 beautiful years. Close your eyes, make a wish, and blow them out together!",
+    title: "Task 6 • 5 Candles For 5 Years of Love 🎂",
+    subtitle: "5 candles glowing for our 5 beautiful years. Close your eyes, make our anniversary wish, and blow them out together!",
     flamesText: "✨ 5 flames are glowing for our 5 years together...",
-    blownText: "🎉 Your wish is blessed by the heavens! Happy Birthday Kunjuti! ❤️"
+    blownText: "🎉 Your wish is blessed by the heavens! Happy 5th Anniversary, My Kunjuti! ❤️"
   },
 
-  // Task 7: Wax-Sealed Handwritten Love Letter from Kunjutan
+  // Task 7: Wax-Sealed Handwritten 5-Year Love Letter from Kunjutan
   letter: {
     header: "My Dearest Kunjuti (Nandini),",
-    date: "November 5th — Celebrating 5 Years & Your Special Day",
+    date: "5 Beautiful Years Together • 2021 – 2026",
     paragraphs: [
-      "Happy Birthday, my precious Kunjuti! ❤️",
-      "As I sit down to write this, my heart is overflowing with so much gratitude. Can you believe it has been 5 whole years since we started this journey together? Five years of laughter, late-night talks, holding hands through tough times, and discovering that my home is wherever you are.",
-      "Every single time I call you 'Kunjuti', my heart feels a warmth that words could never capture. You are the kindest, softest, most incredible soul I have ever known. The way you care for me, listen to me, and believe in me makes me want to be the best man for you every single day.",
-      "Today, on November 5th, we celebrate not just the blessing of your life, but the half-decade of love we have built brick by brick. Thank you for choosing me. Thank you for standing by your Kunjutan through every high and low.",
-      "I promise to keep loving you, protecting your smile, wiping your tears, and making every year even more magical than the last. 5 years down, my love... and a lifetime of forever to go."
+      "Happy 5th Anniversary, my precious Kunjuti! ❤️",
+      "As I look back at the past five years, my heart fills with endless gratitude and butterflies all over again. Can you believe it has been half a decade since you walked into my life and turned it into the most beautiful fairy tale? 1,825 days of your laughter, your gentle care, your cute silly expressions, and the warmth that only you can give me.",
+      "Every single time I call you 'Kunjuti', it reminds me how deeply lucky I am. You are not just the love of my life, you are my peace, my safest haven, and the strongest pillar in my world. Through all the smiles, the quiet moments, the late-night talks, and every storm we weathered hand-in-hand, you made every single second worth living.",
+      "Thank you for choosing me every single day. Thank you for loving your Kunjutan with all your heart, for believing in us, and for making our bond stronger with every passing sunrise. Five years have flown by like a heartbeat, yet every moment with you is etched into my soul forever.",
+      "I promise to always hold your hand tightly, to protect your smile, to wipe away every tear, and to love you more deeply with each new tomorrow. 5 beautiful years completed, my Kunjuti... and a lifetime of forever waiting for us."
     ],
     closing: "With every beat of my heart, Forever & Always,",
     signature: "Your Kunjutan (Basil) ❤️"

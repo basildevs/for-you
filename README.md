@@ -1,7 +1,7 @@
-﻿# 🎂 5 Years of Us • Birthday Surprise for Kunjuti (Nandini) ❤️
-### From Basil (Your Kunjutan) • Celebrating 5 Years & November 5th Birthday
+﻿# 💖 5 Years of Us • Kunjutan & Kunjuti (Basil & Nandini) ❤️
+### Celebrating 5 Magical Years of Relationship & Endless Love
 
-An emotional, interactive, mobile-first anniversary & birthday web experience celebrating 5 magical years of being together.
+An emotional, interactive, mobile-first 5-year relationship anniversary web experience celebrating half a decade of love, laughter, and growing together.
 
 ---
 
@@ -19,8 +19,8 @@ An emotional, interactive, mobile-first anniversary & birthday web experience ce
 4. **Task 3 (Relationship Q&A Quiz)**: Answer 4 sweet couple trivia questions revealing secret notes and quotes.
 5. **Task 4 (5-Year Memory Vault)**: 25 photos organized across Year 1, Year 2, Year 3, Year 4, and Year 5 with tabs and swipe gestures.
 6. **Task 5 (5 Lanterns of 5 Years)**: Release 5 glowing sky lanterns into the night sky, each holding a deep reflection for that year.
-7. **Task 6 (Birthday Cake & 5 Candles)**: 5 glowing candles on the cake. Blow them out to trigger fireworks and confetti!
-8. **Task 7 (Wax-Sealed Love Letter)**: 3D envelope with custom wax seal `B❤️N` opening into Kunjutan's handwritten letter.
+7. **Task 6 (5 Candles for 5 Years)**: 5 glowing candles on the cake. Make an anniversary wish and blow them out!
+8. **Task 7 (Wax-Sealed Love Letter)**: 3D envelope with custom wax seal `B❤️N` opening into Kunjutan's 5-year love letter.
 9. **Task 8 (Grand Finale & Forever Promise)**: Interactive heart fireworks on tap + "Will you walk the next 50 years with me, Kunjuti? 💍".
 
 ---

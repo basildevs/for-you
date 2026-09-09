@@ -1,6 +1,7 @@
 /**
  * ==========================================================
- * BIRTHDAY SURPRISE INTERACTIVE ENGINE - NANDINI (KUNJU)
+ * 5-YEAR RELATIONSHIP ANNIVERSARY CELEBRATION ENGINE
+ * FOR NANDINI (KUNJUTI) FROM BASIL (KUNJUTAN)
  * ==========================================================
  */
 
@@ -918,7 +919,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---------------------------------------------------------
-  // CHAPTER 6: TASK 6 - BIRTHDAY CAKE & 5 CANDLES
+  // CHAPTER 6: TASK 6 - ANNIVERSARY CAKE & 5 CANDLES
   // ---------------------------------------------------------
   let candlesBlown = false;
 
