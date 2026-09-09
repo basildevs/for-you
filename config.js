@@ -169,11 +169,11 @@ const CONFIG = {
       title: "Adventures & Eternal Laughter 🌸",
       theme: "Exploring life together, celebrating small victories, and falling in love all over again.",
       photos: [
-        { id: "y4_1", src: "assets/photos/y4_1.svg", caption: "Every adventure is golden" },
-        { id: "y4_2", src: "assets/photos/y4_2.svg", caption: "Your smile is my home" },
-        { id: "y4_3", src: "assets/photos/y4_3.svg", caption: "Moments etched in time" },
-        { id: "y4_4", src: "assets/photos/y4_4.svg", caption: "Laughter that cures all" },
-        { id: "y4_5", src: "assets/photos/y4_5.svg", caption: "Four years of deep love" }
+        { id: "y4_1", src: "assets/photos/y4_1.jpg", caption: "Every adventure is golden" },
+        { id: "y4_2", src: "assets/photos/y4_2.jpg", caption: "Your smile is my home" },
+        { id: "y4_3", src: "assets/photos/y4_3.jpg", caption: "Moments etched in time" },
+        { id: "y4_4", src: "assets/photos/y4_4.jpg", caption: "Laughter that cures all" },
+        { id: "y4_5", src: "assets/photos/y4_5.jpg", caption: "Four years of deep love" }
       ]
     },
     {
