@@ -38,9 +38,11 @@ const CONFIG = {
 
   // Audio Settings
   music: {
-    title: "Can't Help Falling in Love (Romantic Piano Suite)",
-    useFile: false,
-    filePath: "assets/audio/song.mp3"
+    title: "Gymnopédie No. 1 • Soothing Romantic Piano",
+    useFile: true,
+    filePath: "assets/audio/soothing_romantic.mp3",
+    secondaryTitle: "Canon in D • Romantic Strings & Piano",
+    secondaryPath: "assets/audio/canon_in_d.mp3"
   },
 
   // Romantic Love Quotes for Transitions & Tasks
@@ -66,10 +68,26 @@ const CONFIG = {
     hitMessage: "Bullseye! 5 Years ago you stole my heart, and you keep it forever ❤️"
   },
 
-  // Task 3: Relationship Q&A Trivia Mini-Game
+  // Task 3: Catch Kunjutan's Love Sparks Mini-Game
+  catchGame: {
+    title: "Task 3 • Catch Kunjutan's Love Sparks 💖",
+    subtitle: "Slide your golden basket to catch 12 falling love sparks and fill our Love Meter to 100%!",
+    targetScore: 12,
+    successMessage: "Love Meter 100% Charged! Kunjutan's heart is completely yours! ✨"
+  },
+
+  // Task 4: The Paris Love Lock Bridge
+  loveLock: {
+    title: "Task 4 • Our Eternal Paris Love Lock 🔒",
+    subtitle: "Insert the golden key to seal our 5-year lock, then throw the key into the River of Forever!",
+    engraving: "Basil ❤️ Nandini • 5 Years • Kunjutan & Kunjuti",
+    successMessage: "Locked in Heaven & Earth for All Eternity! No key can ever undo our love. 🌊✨"
+  },
+
+  // Task 5: Relationship Q&A Trivia Mini-Game
   trivia: {
-    title: "Task 3 • The Kunjuti & Kunjutan Love Quiz 💕",
-    subtitle: "Answer these 4 sweet couple questions to unlock our memory vault!",
+    title: "Task 5 • The Kunjuti & Kunjutan Love Quiz 💕",
+    subtitle: "Answer these 4 sweet couple questions to unlock our next romantic game!",
     questions: [
       {
         id: 1,
@@ -122,7 +140,50 @@ const CONFIG = {
     ]
   },
 
-  // Task 4: 5-Year Memory Vault (5 Photos per Year = 25 Photos Total)
+  // Task 6: Scratch-to-Reveal 5 Secret Love Coupons
+  coupons: {
+    title: "Task 6 • Scratch 5 Secret Love Coupons 🎟️",
+    subtitle: "Scratch off the golden foil on each card with your finger/mouse to reveal Kunjutan's private promises!",
+    cards: [
+      {
+        year: 1,
+        title: "Year 1 • Midnight Warmth 🧸",
+        code: "COUPON-Y1-CUDDLES",
+        reward: "Unlimited Late-Night Cuddles & Endless Warm Hugs",
+        note: "Redeemable anytime, anywhere, with zero expiration date!"
+      },
+      {
+        year: 2,
+        title: "Year 2 • The Peacemaker 🏆",
+        code: "COUPON-Y2-INSTAWIN",
+        reward: "Instant Win Pass For Any Cute Argument",
+        note: "Play this card and Kunjutan will instantly admit you're 100% right!"
+      },
+      {
+        year: 3,
+        title: "Year 3 • Chef Kunjutan 🍝",
+        code: "COUPON-Y3-DINNER",
+        reward: "Candlelight Dinner Cooked Personally By Basil",
+        note: "Your favorite comfort meals served with candles, smiles, and dessert."
+      },
+      {
+        year: 4,
+        title: "Year 4 • Guardian Angel 🛡️",
+        code: "COUPON-Y4-SHIELD",
+        reward: "A Lifetime Safe Place & Your Personal Cheerleader",
+        note: "Whenever the world gets heavy, my shoulder is always yours to lean on."
+      },
+      {
+        year: 5,
+        title: "Year 5 • The Grand Devotion ♾️",
+        code: "COUPON-Y5-FOREVER",
+        reward: "My Whole Heart, Soul & Life — Completely Yours",
+        note: "Valid for all our next 50 years together. Bound by eternal love."
+      }
+    ]
+  },
+
+  // Task 7: 5-Year Memory Vault (5 Photos per Year = 25 Photos Total)
   yearsData: [
     {
       yearNum: 1,
@@ -191,7 +252,17 @@ const CONFIG = {
     }
   ],
 
-  // Task 5: 5 Lanterns of Our 5 Years (Tapping pops/illuminates each year)
+  // Task 8: Biometric Heartbeat & Soulmate Scanner
+  scanner: {
+    title: "Task 8 • Biometric Heartbeat Scanner 💓",
+    subtitle: "Touch & hold your thumb on the holographic scanner to measure our 5-year love resonance!",
+    prompt: "Hold thumb firmly on scanner...",
+    diagnosing: "Calibrating heartbeat frequency...",
+    successTitle: "OVERFLOW: 1,000,000% COMPATIBILITY! 💖",
+    successMessage: "Warning: Love levels exceed universal maximum! Basil (Kunjutan) & Nandini (Kunjuti) are verified Eternal Soulmates!"
+  },
+
+  // Task 9: 5 Lanterns of Our 5 Years (Tapping pops/illuminates each year)
   lanterns: [
     {
       year: 1,
@@ -220,15 +291,15 @@ const CONFIG = {
     }
   ],
 
-  // Task 6: Anniversary Cake with 5 Candles
+  // Task 10: Anniversary Cake with 5 Candles
   cake: {
-    title: "Task 6 • 5 Candles For 5 Years of Love 🎂",
+    title: "Task 10 • 5 Candles For 5 Years of Love 🎂",
     subtitle: "5 candles glowing for our 5 beautiful years. Close your eyes, make our anniversary wish, and blow them out together!",
     flamesText: "✨ 5 flames are glowing for our 5 years together...",
     blownText: "🎉 Your wish is blessed by the heavens! Happy 5th Anniversary, My Kunjuti! ❤️"
   },
 
-  // Task 7: Wax-Sealed Handwritten 5-Year Love Letter from Kunjutan
+  // Task 11: Wax-Sealed Handwritten 5-Year Love Letter from Kunjutan
   letter: {
     header: "My Dearest Kunjuti (Nandini),",
     date: "5 Beautiful Years Together • 2021 – 2026",

@@ -1146,3 +1146,273 @@ body {
   margin: 6px 0;
   line-height: 1.3;
 }
+
+/* ==========================================================
+   TASK 3: CATCH KUNJUTAN'S LOVE SPARKS MINI-GAME
+   ========================================================== */
+.catch-arena {
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(244, 63, 94, 0.2);
+}
+
+.catch-basket {
+  width: 64px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.05s ease-out;
+  touch-action: none;
+  user-select: none;
+}
+
+.basket-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.35) 0%, transparent 70%);
+  animation: pulseGlow 1.5s infinite alternate;
+}
+
+.falling-spark {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(255, 75, 139, 0.8));
+  animation: sparkSway 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes sparkSway {
+  0% { transform: rotate(-15deg); }
+  100% { transform: rotate(15deg); }
+}
+
+.spark-popup-text {
+  position: absolute;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fef08a;
+  text-shadow: 0 0 8px #f43f5e;
+  pointer-events: none;
+  animation: popupFloat 0.8s ease-out forwards;
+}
+
+@keyframes popupFloat {
+  0% { opacity: 1; transform: translateY(0) scale(0.8); }
+  100% { opacity: 0; transform: translateY(-30px) scale(1.1); }
+}
+
+/* ==========================================================
+   TASK 4: PARIS LOVE LOCK BRIDGE
+   ========================================================== */
+.river-bg {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 27, 75, 0.9) 70%, rgba(13, 148, 136, 0.3) 100%);
+}
+
+.bridge-railing {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: repeating-linear-gradient(90deg, #64748b 0px, #64748b 8px, transparent 8px, transparent 24px);
+  border-top: 2px solid #94a3b8;
+  border-bottom: 2px solid #94a3b8;
+  opacity: 0.4;
+}
+
+.padlock-wrapper {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.padlock-shackle {
+  width: 58px;
+  height: 48px;
+  border: 9px solid #fbbf24;
+  border-bottom: none;
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.5);
+  transform: translateY(12px);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.padlock-shackle.locked {
+  transform: translateY(0px);
+  border-color: #f59e0b;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.8);
+}
+
+.padlock-body {
+  width: 110px;
+  height: 85px;
+  background: linear-gradient(145deg, #fef08a, #f59e0b, #b45309);
+  border-radius: 18px;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.6), inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.padlock-engraving {
+  text-align: center;
+}
+
+.keyhole-slot {
+  width: 10px;
+  height: 16px;
+  background: #451a03;
+  border-radius: 5px 5px 2px 2px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.keyhole-slot::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  background: #451a03;
+}
+
+.golden-key {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.golden-key:hover {
+  transform: scale(1.25) rotate(-15deg);
+}
+
+.splash-ripple {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(147, 197, 253, 0.8);
+  border-radius: 50%;
+  animation: rippleExpand 1.2s ease-out forwards;
+}
+
+@keyframes rippleExpand {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* ==========================================================
+   TASK 6: SCRATCH-TO-REVEAL 5 SECRET LOVE COUPONS
+   ========================================================== */
+.coupon-tab-btn {
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.coupon-tab-btn.active {
+  background: linear-gradient(90deg, #f43f5e, #fbbf24);
+  color: #fff;
+  border-color: #fbbf24;
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.5);
+}
+
+.coupon-voucher {
+  border: 2px dashed rgba(251, 191, 36, 0.4);
+  border-radius: 14px;
+}
+
+.scratch-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+}
+
+/* ==========================================================
+   TASK 8: BIOMETRIC HEARTBEAT SCANNER
+   ========================================================== */
+.scanner-stage {
+  width: 180px;
+  height: 180px;
+  position: relative;
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(244, 63, 94, 0.4);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pulse-ring-1 {
+  animation: scannerPulse 2s ease-out infinite;
+}
+
+.pulse-ring-2 {
+  animation: scannerPulse 2s ease-out 1s infinite;
+}
+
+@keyframes scannerPulse {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+.thumbprint-pad {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.thumbprint-pad:active, .thumbprint-pad.scanning {
+  transform: scale(0.94);
+  border-color: #f43f5e;
+  box-shadow: 0 0 35px #f43f5e, inset 0 0 20px rgba(244, 63, 94, 0.4);
+}
+
+.scan-laser {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff2a6d, #fef08a, #ff2a6d, transparent);
+  box-shadow: 0 0 12px #ff2a6d;
+  border-radius: 2px;
+  animation: laserScan 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes laserScan {
+  0% { top: 20%; opacity: 0.6; }
+  100% { top: 80%; opacity: 1; }
+}
+
+/* Ambient Floating Hearts on Screen Tap */
+.ambient-heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 999;
+  font-size: 20px;
+  animation: ambientFloat 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes ambientFloat {
+  0% { transform: translate(-50%, -50%) scale(0.4) rotate(0deg); opacity: 1; }
+  100% { transform: translate(-50%, -120px) scale(1.3) rotate(20deg); opacity: 0; }
+}
+

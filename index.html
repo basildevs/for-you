@@ -26,14 +26,21 @@
   <canvas id="fx-canvas"></canvas>
 
   <!-- Audio Control HUD -->
-  <div class="audio-hud" id="audio-toggle" title="Toggle Music">
-    <div class="music-wave" id="audio-wave">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+  <div class="audio-hud" id="audio-hud-container">
+    <div class="flex items-center gap-1.5 cursor-pointer" id="audio-toggle" title="Toggle Music">
+      <div class="music-wave" id="audio-wave">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span class="text-xs font-medium text-pink-200" id="audio-label">Music: On</span>
     </div>
-    <span class="text-xs font-medium text-pink-200" id="audio-label">Music: On</span>
+    <span class="text-white/20">|</span>
+    <button class="text-[11px] text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-1 font-semibold" id="audio-switch-track" title="Switch Romantic Music Track">
+      <span>🎼</span>
+      <span id="track-name-badge">Gymnopédie No. 1</span>
+    </button>
   </div>
 
   <!-- Progress Dots Indicator -->
@@ -206,20 +213,116 @@
         </div>
 
         <button class="btn-glow hidden w-full" id="btn-next-chapter-2">
-          <span>Task Complete • Take Relationship Quiz 💕</span>
+          <span>Task Complete • Catch Love Sparks Mini-Game 💖</span>
         </button>
       </div>
     </section>
 
     <!-- ==========================================
-         CHAPTER 3: TASK 3 - RELATIONSHIP Q&A TRIVIA
+         CHAPTER 3: TASK 3 - CATCH LOVE SPARKS MINI-GAME
          ========================================== -->
     <section class="chapter-section" id="chapter-3">
+      <div class="glass-card flex flex-col items-center justify-between min-h-[490px]">
+        <div>
+          <span class="task-badge">Task 3 • Love Sparks Mini-Game</span>
+          <h2 class="text-xl font-bold text-white mt-1">Catch Kunjutan's Sparks 💖</h2>
+          <p class="text-xs text-slate-300">Slide your golden basket to catch 12 falling love sparks!</p>
+        </div>
+
+        <!-- Score & Meter Header -->
+        <div class="w-full flex items-center justify-between px-3 py-1.5 bg-white/5 rounded-xl border border-white/10 my-1">
+          <span class="text-xs text-pink-300 font-semibold" id="catch-score-text">Sparks: 0 / 12</span>
+          <div class="w-32 h-2.5 bg-slate-800 rounded-full overflow-hidden border border-white/10">
+            <div id="catch-progress-bar" class="h-full bg-gradient-to-r from-rose-500 to-amber-400 w-0 transition-all duration-200"></div>
+          </div>
+          <span class="text-xs font-bold text-amber-300" id="catch-percent">0%</span>
+        </div>
+
+        <!-- Interactive Game Arena -->
+        <div class="catch-arena relative w-full h-[250px] bg-slate-950/60 rounded-2xl border border-pink-500/20 overflow-hidden select-none touch-none" id="catch-arena">
+          <!-- Falling sparks container -->
+          <div id="catch-sparks-layer" class="absolute inset-0 pointer-events-none"></div>
+          <!-- Draggable/Sliding Love Basket -->
+          <div id="catch-basket" class="catch-basket absolute bottom-2 left-1/2 -translate-x-1/2 cursor-grab active:cursor-grabbing">
+            <div class="basket-glow"></div>
+            <div class="basket-art text-2xl filter drop-shadow-[0_0_12px_#ff4b8b]">🧺💖</div>
+          </div>
+        </div>
+
+        <p class="text-xs text-pink-300 h-5 font-medium" id="catch-status">Slide the basket left and right!</p>
+
+        <button class="btn-glow hidden w-full" id="btn-next-chapter-3">
+          <span>Task Complete • Step to Paris Love Lock 🔒</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 4: TASK 4 - PARIS LOVE LOCK BRIDGE
+         ========================================== -->
+    <section class="chapter-section" id="chapter-4">
+      <div class="glass-card flex flex-col items-center justify-between min-h-[490px]">
+        <div>
+          <span class="task-badge">Task 4 • The Paris Love Lock</span>
+          <h2 class="text-xl font-bold text-white mt-1">Our Eternal Love Lock 🔒</h2>
+          <p class="text-xs text-slate-300">Lock our love on the Pont des Arts, then toss the key forever!</p>
+        </div>
+
+        <!-- Shimmering Bridge & Padlock Visualizer -->
+        <div class="love-lock-stage relative w-full h-[250px] my-2 bg-gradient-to-b from-slate-950/70 to-indigo-950/80 rounded-2xl border border-amber-400/20 flex flex-col items-center justify-center overflow-hidden">
+          <!-- Shimmering starry water river background -->
+          <div class="river-bg absolute inset-0 pointer-events-none">
+            <div class="river-stars"></div>
+            <div class="bridge-railing"></div>
+          </div>
+
+          <!-- Animated Golden Padlock -->
+          <div class="padlock-wrapper relative z-10" id="padlock-wrapper">
+            <div class="padlock-shackle" id="padlock-shackle"></div>
+            <div class="padlock-body">
+              <div class="padlock-engraving">
+                <span class="text-[10px] font-bold text-amber-900 block leading-tight">Basil ❤️ Nandini</span>
+                <span class="text-[8px] text-rose-900 font-semibold block">5 Years • 2021-2026</span>
+                <span class="text-[8px] text-amber-950 font-bold block">Kunjutan &amp; Kunjuti</span>
+              </div>
+              <div class="keyhole-slot" id="padlock-keyhole"></div>
+            </div>
+          </div>
+
+          <!-- Golden Key Stage -->
+          <div class="key-container relative z-10 mt-3 flex items-center justify-center gap-2" id="key-container">
+            <div class="golden-key cursor-pointer text-2xl animate-bounce filter drop-shadow-[0_0_10px_#fbbf24]" id="golden-key" title="Tap key to lock our love">
+              🗝️
+            </div>
+            <span class="text-[11px] text-amber-200 font-medium" id="key-hint">Tap golden key to lock!</span>
+          </div>
+
+          <!-- River Splash FX container -->
+          <div id="river-splash-fx" class="absolute inset-0 pointer-events-none z-20"></div>
+        </div>
+
+        <p class="text-xs text-pink-300 h-6 font-medium text-center" id="lock-status-msg">Insert the golden key...</p>
+
+        <div class="w-full flex flex-col gap-2">
+          <button class="btn-secondary hidden w-full py-2.5 text-xs" id="btn-throw-key">
+            <span>🌊 Throw Key Into River of Forever!</span>
+          </button>
+          <button class="btn-glow hidden w-full" id="btn-next-chapter-4">
+            <span>Take Our Relationship Quiz 💕</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 5: TASK 5 - RELATIONSHIP Q&A TRIVIA
+         ========================================== -->
+    <section class="chapter-section" id="chapter-5">
       <div class="glass-card flex flex-col items-center max-h-[92vh] overflow-y-auto">
-        <span class="task-badge">Task 3 • Couple Trivia Quiz</span>
+        <span class="task-badge">Task 5 • Couple Trivia Quiz</span>
         <h2 class="text-xl font-bold text-white mb-1">The Kunjuti &amp; Kunjutan Quiz 💕</h2>
         <p class="text-xs text-slate-300 text-center mb-3">
-          Answer all 4 questions to unlock our 5-Year Memory Vault!
+          Answer all 4 questions to unlock our secret love coupons!
         </p>
 
         <!-- Dynamic Trivia Container -->
@@ -229,19 +332,67 @@
 
         <div class="w-full flex flex-col items-center mt-2">
           <p class="text-xs text-pink-300 font-semibold h-5 mb-2" id="trivia-status">Question 1 of 4</p>
-          <button class="btn-glow w-full opacity-50 pointer-events-none" id="btn-next-chapter-3">
-            <span>Unlock 5-Year Memory Vault 📸</span>
+          <button class="btn-glow w-full opacity-50 pointer-events-none" id="btn-next-chapter-5">
+            <span>Reveal 5 Secret Love Coupons 🎟️</span>
           </button>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         CHAPTER 4: TASK 4 - 5-YEAR MEMORY VAULT (25 PHOTOS)
+         CHAPTER 6: TASK 6 - SCRATCH 5 SECRET LOVE COUPONS
          ========================================== -->
-    <section class="chapter-section" id="chapter-4">
+    <section class="chapter-section" id="chapter-6">
+      <div class="glass-card flex flex-col items-center min-h-[500px]">
+        <span class="task-badge">Task 6 • Secret Love Coupons</span>
+        <h2 class="text-xl font-bold text-white mb-1">Scratch 5 Love Coupons 🎟️</h2>
+        <p class="text-xs text-slate-300 text-center mb-2">
+          Rub off the gold glitter to reveal Kunjutan's private promises!
+        </p>
+
+        <!-- Coupon Year Selector Tabs (Year 1 to 5) -->
+        <div class="flex items-center gap-1.5 mb-2.5 overflow-x-auto py-1 w-full justify-center" id="coupon-tabs">
+          <button class="coupon-tab-btn active" data-coupon="0">Year 1</button>
+          <button class="coupon-tab-btn" data-coupon="1">Year 2</button>
+          <button class="coupon-tab-btn" data-coupon="2">Year 3</button>
+          <button class="coupon-tab-btn" data-coupon="3">Year 4</button>
+          <button class="coupon-tab-btn" data-coupon="4">Year 5</button>
+        </div>
+
+        <!-- Scratch Card Container -->
+        <div class="scratch-card-wrapper relative w-[280px] h-[190px] rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.6)] border-2 border-amber-400/40">
+          <!-- Underlying Revealed Coupon Voucher -->
+          <div class="coupon-voucher absolute inset-0 p-3 flex flex-col justify-between items-center text-center bg-gradient-to-br from-rose-900/90 via-purple-950/90 to-amber-950/90" id="coupon-revealed">
+            <div class="text-[10px] text-amber-300 font-bold uppercase tracking-wider" id="coupon-voucher-year">Year 1 Promise</div>
+            <div class="text-sm font-bold text-white px-1 leading-snug" id="coupon-voucher-reward">Unlimited Late-Night Cuddles &amp; Endless Warm Hugs</div>
+            <div class="text-[9px] text-pink-200/80 italic" id="coupon-voucher-note">Redeemable anytime, zero expiration!</div>
+            <div class="flex items-center justify-between w-full pt-1 border-t border-white/10 text-[8px] text-amber-400/80 font-mono">
+              <span id="coupon-voucher-code">COUPON-Y1-CUDDLES</span>
+              <span>SIGNED: KUNJUTAN ❤️</span>
+            </div>
+          </div>
+
+          <!-- Scratchable Canvas Overlay -->
+          <canvas id="scratch-canvas" class="scratch-canvas absolute inset-0 w-full h-full cursor-crosshair touch-none"></canvas>
+        </div>
+
+        <div class="flex items-center justify-between w-full px-2 mt-2">
+          <p class="text-[11px] text-pink-300 font-semibold" id="coupon-scratch-status">Scratch card to reveal...</p>
+          <span class="text-[10px] text-amber-300 font-bold" id="coupon-scratched-count">Unlocked: 0 / 5</span>
+        </div>
+
+        <button class="btn-glow mt-2.5 w-full opacity-50 pointer-events-none" id="btn-next-chapter-6">
+          <span>Enter 5-Year Memory Vault 📸</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 7: TASK 7 - 5-YEAR MEMORY VAULT (25 PHOTOS)
+         ========================================== -->
+    <section class="chapter-section" id="chapter-7">
       <div class="glass-card flex flex-col items-center">
-        <span class="task-badge">Task 4 • 5-Year Memory Vault</span>
+        <span class="task-badge">Task 7 • 5-Year Memory Vault</span>
         <h2 class="text-lg font-bold text-white mb-1">5 Years • 25 Moments of Us 📸</h2>
 
         <!-- Year Navigation Tabs (Year 1 to Year 5) -->
@@ -278,18 +429,62 @@
           <button class="btn-secondary text-xs px-3 py-1.5" id="btn-next-memory">Next →</button>
         </div>
 
-        <button class="btn-glow mt-3 w-full" id="btn-next-chapter-4">
-          <span>Release 5 Love Lanterns 🏮</span>
+        <button class="btn-glow mt-3 w-full" id="btn-next-chapter-7">
+          <span>Biometric Heart Resonance Scanner 💓</span>
         </button>
       </div>
     </section>
 
     <!-- ==========================================
-         CHAPTER 5: TASK 5 - 5 LANTERNS OF 5 YEARS
+         CHAPTER 8: TASK 8 - BIOMETRIC HEARTBEAT SCANNER
          ========================================== -->
-    <section class="chapter-section" id="chapter-5">
+    <section class="chapter-section" id="chapter-8">
+      <div class="glass-card flex flex-col items-center justify-between min-h-[480px]">
+        <div>
+          <span class="task-badge">Task 8 • Soulmate Resonance</span>
+          <h2 class="text-xl font-bold text-white mt-1">Heartbeat Scanner 💓</h2>
+          <p class="text-xs text-slate-300">Touch &amp; hold your thumb to measure our 5-year love frequency!</p>
+        </div>
+
+        <!-- Holographic Scanner Stage -->
+        <div class="scanner-stage flex flex-col items-center justify-center my-3 relative">
+          <!-- Pulse wave rings -->
+          <div class="pulse-ring pulse-ring-1" id="scanner-ring-1"></div>
+          <div class="pulse-ring pulse-ring-2" id="scanner-ring-2"></div>
+
+          <!-- Biometric Thumbprint Sensor -->
+          <div class="thumbprint-pad relative w-24 h-24 rounded-full bg-slate-950/80 border-2 border-pink-500/40 flex items-center justify-center cursor-pointer shadow-[0_0_30px_rgba(244,63,94,0.4)] touch-none select-none" id="thumbprint-pad">
+            <svg viewBox="0 0 100 100" class="w-14 h-14 text-pink-400/80 pointer-events-none">
+              <path d="M50 15 C30 15 15 30 15 50 C15 65 25 75 35 85 M50 25 C35 25 25 35 25 50 C25 60 32 70 42 78 M50 35 C42 35 35 42 35 50 C35 55 40 65 48 70 M50 45 C48 45 45 48 45 50 C45 53 48 58 50 62 M65 85 C75 75 85 65 85 50 C85 30 70 15 50 15 M58 78 C68 70 75 60 75 50 C75 35 65 25 50 25 M52 70 C60 65 65 55 65 50 C65 42 58 35 50 35" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+            </svg>
+            <div class="scan-laser hidden" id="scan-laser"></div>
+          </div>
+
+          <!-- Realtime ECG & Counter Display -->
+          <div class="mt-3 flex flex-col items-center">
+            <div class="text-2xl font-black text-rose-400 font-mono tracking-wider drop-shadow-[0_0_15px_#ff4b8b]" id="scanner-percent">0%</div>
+            <p class="text-[11px] text-pink-200 font-medium h-4" id="scanner-status">Press &amp; hold thumb above</p>
+          </div>
+        </div>
+
+        <!-- Soulmate Diagnosis Result Card -->
+        <div class="diagnosis-card hidden p-2.5 bg-rose-500/10 border border-rose-500/30 rounded-xl w-full text-center" id="diagnosis-card">
+          <p class="text-xs font-bold text-amber-300">💖 1,000,000% INFINITE LOVE DETECTED!</p>
+          <p class="text-[11px] text-slate-200 mt-0.5">Basil &amp; Nandini are verified eternal soulmates!</p>
+        </div>
+
+        <button class="btn-glow hidden w-full" id="btn-next-chapter-8">
+          <span>Release 5 Sky Lanterns 🏮</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHAPTER 9: TASK 9 - 5 LANTERNS OF 5 YEARS
+         ========================================== -->
+    <section class="chapter-section" id="chapter-9">
       <div class="glass-card flex flex-col items-center h-[520px] max-h-[92vh]">
-        <span class="task-badge">Task 5 • 5 Lanterns of Love</span>
+        <span class="task-badge">Task 9 • 5 Lanterns of Love</span>
         <h2 class="text-lg font-bold text-white mb-1">Release 5 Sky Lanterns 🏮</h2>
         <p class="text-xs text-slate-300 text-center mb-2">
           Tap each of the 5 lanterns to send it into the sky &amp; unlock Kunjutan's reflection:
@@ -305,18 +500,18 @@
           <!-- Revealed cards will slide into here -->
         </div>
 
-        <button class="btn-glow w-full mt-2" id="btn-next-chapter-5">
+        <button class="btn-glow w-full mt-2" id="btn-next-chapter-9">
           <span>Make Our 5-Year Anniversary Wish 🎂</span>
         </button>
       </div>
     </section>
 
     <!-- ==========================================
-         CHAPTER 6: TASK 6 - ANNIVERSARY CAKE & 5 CANDLES
+         CHAPTER 10: TASK 10 - ANNIVERSARY CAKE & 5 CANDLES
          ========================================== -->
-    <section class="chapter-section" id="chapter-6">
+    <section class="chapter-section" id="chapter-10">
       <div class="glass-card flex flex-col items-center">
-        <span class="task-badge">Task 6 • 5 Candles &amp; Anniversary Wish</span>
+        <span class="task-badge">Task 10 • 5 Candles &amp; Anniversary Wish</span>
         <h2 class="text-xl font-bold text-white mb-1">Make A Wish, My Kunjuti 🎂</h2>
         <p class="text-xs text-slate-300 text-center mb-2">
           5 candles glowing for our 5 beautiful years. Close your eyes, make our anniversary wish, and blow them out!
@@ -361,7 +556,7 @@
           <button class="btn-glow flex-1" id="btn-blow-candles">
             <span>💨 Blow Out 5 Candles!</span>
           </button>
-          <button class="btn-glow hidden flex-1" id="btn-next-chapter-6">
+          <button class="btn-glow hidden flex-1" id="btn-next-chapter-10">
             <span>Read Kunjutan's Letter 💌</span>
           </button>
         </div>
@@ -369,11 +564,11 @@
     </section>
 
     <!-- ==========================================
-         CHAPTER 7: TASK 7 - WAX-SEALED 5-YEAR LETTER
+         CHAPTER 11: TASK 11 - WAX-SEALED 5-YEAR LETTER
          ========================================== -->
-    <section class="chapter-section" id="chapter-7">
+    <section class="chapter-section" id="chapter-11">
       <div class="glass-card flex flex-col items-center relative overflow-hidden min-h-[480px]">
-        <span class="task-badge">Task 7 • Sealed With 5 Years of Love</span>
+        <span class="task-badge">Task 11 • Sealed With 5 Years of Love</span>
         <h2 class="text-xl font-bold text-white mb-1">A Letter For My Kunjuti 💌</h2>
         <p class="text-xs text-slate-300 text-center mb-3">Tap the wax seal 'B❤️N' to open your private letter</p>
 
@@ -397,16 +592,16 @@
           </div>
         </div>
 
-        <button class="btn-glow mt-4 w-full" id="btn-next-chapter-7">
+        <button class="btn-glow mt-4 w-full" id="btn-next-chapter-11">
           <span>Our Forever Promise 🎆</span>
         </button>
       </div>
     </section>
 
     <!-- ==========================================
-         CHAPTER 8: GRAND FINALE & FOREVER PROMISE
+         CHAPTER 12: GRAND FINALE & FOREVER PROMISE
          ========================================== -->
-    <section class="chapter-section" id="chapter-8">
+    <section class="chapter-section" id="chapter-12">
       <div class="glass-card flex flex-col items-center grand-celebration">
         <span class="task-badge">Our Forever Promise ✨</span>
         
