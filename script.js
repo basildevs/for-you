@@ -623,16 +623,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // CHAPTER 1: TASK 1 - STARLIGHT DESTINY
   // ---------------------------------------------------------
   let connectedNodes = [];
-  const totalNodes = 4;
+  const totalNodes = 10;
 
   function initConstellationChapter() {
     connectedNodes = [];
     const svg = document.getElementById('constellation-svg');
-    svg.innerHTML = '';
+    if (svg) svg.innerHTML = '';
     const statusText = document.getElementById('constellation-status');
-    statusText.textContent = "Tap star 1 to begin...";
+    if (statusText) statusText.textContent = "Tap star 1 to draw 'B' (Basil)...";
+    const heart = document.getElementById('constellation-heart');
+    if (heart) {
+      heart.className = "absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 text-rose-500/30 text-2xl font-bold transition-all duration-700 pointer-events-none select-none";
+    }
     const nextBtn = document.getElementById('btn-next-chapter-1');
-    nextBtn.classList.add('opacity-50', 'pointer-events-none');
+    if (nextBtn) nextBtn.classList.add('opacity-50', 'pointer-events-none');
 
     document.querySelectorAll('.star-node').forEach(node => {
       node.classList.remove('connected');
@@ -645,29 +649,45 @@ document.addEventListener('DOMContentLoaded', () => {
     if (idx === nextExpected) {
       connectedNodes.push(idx);
       SoundFX.pop();
-      playSynthTone(320 + idx * 120, 'sine', 0.3, 0.15);
+      playSynthTone(280 + idx * 55, 'sine', 0.3, 0.15);
       triggerHaptic([25]);
 
       const nodeEl = document.querySelector(`.star-node[data-idx="${idx}"]`);
-      nodeEl.classList.add('connected');
+      if (nodeEl) nodeEl.classList.add('connected');
 
-      if (connectedNodes.length > 1) {
+      // Draw line between consecutive nodes, but skip drawing across from node 6 (end of B) to node 7 (start of N)
+      if (connectedNodes.length > 1 && idx !== 7) {
         const prevIdx = connectedNodes[connectedNodes.length - 2];
         const prevEl = document.querySelector(`.star-node[data-idx="${prevIdx}"]`);
-        const p1 = getNodeCenter(prevEl);
-        const p2 = getNodeCenter(nodeEl);
-        drawConstellationLine(p1.x, p1.y, p2.x, p2.y);
+        if (prevEl && nodeEl) {
+          const p1 = getNodeCenter(prevEl);
+          const p2 = getNodeCenter(nodeEl);
+          drawConstellationLine(p1.x, p1.y, p2.x, p2.y);
+        }
       }
 
       const statusText = document.getElementById('constellation-status');
-      if (connectedNodes.length === totalNodes) {
-        statusText.textContent = "🌟 Task 1 Complete! Our 5-Year Starlight Destiny is Sealed!";
+      const heart = document.getElementById('constellation-heart');
+
+      if (idx === 6) {
+        // Letter 'B' completed!
         SoundFX.chime();
-        confetti({ particleCount: 45, spread: 60, origin: { y: 0.6 } });
+        if (heart) {
+          heart.className = "absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 text-rose-500 text-3xl font-bold transition-all duration-700 pointer-events-none select-none scale-125 drop-shadow-[0_0_12px_rgba(244,63,94,0.9)] animate-pulse";
+        }
+        if (statusText) statusText.textContent = "✨ 'B' (Basil) Connected! Now tap star 7 for 'N' (Nandini)...";
+      } else if (connectedNodes.length === totalNodes) {
+        // Complete!
+        if (statusText) statusText.textContent = "🌟 Task 1 Complete! Basil & Nandini (B ❤️ N) Celestial Link Sealed!";
+        SoundFX.chime();
+        SoundFX.harpGliss();
+        confetti({ particleCount: 50, spread: 70, origin: { y: 0.6 } });
         const nextBtn = document.getElementById('btn-next-chapter-1');
-        nextBtn.classList.remove('opacity-50', 'pointer-events-none');
+        if (nextBtn) nextBtn.classList.remove('opacity-50', 'pointer-events-none');
+      } else if (idx < 6) {
+        if (statusText) statusText.textContent = `Drawing 'B' (Basil)... Tap star ${idx + 1}`;
       } else {
-        statusText.textContent = `Tap star ${connectedNodes.length + 1}...`;
+        if (statusText) statusText.textContent = `Drawing 'N' (Nandini)... Tap star ${idx + 1}`;
       }
     }
   }

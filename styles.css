@@ -306,18 +306,21 @@ body {
 
 .star-node {
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background: radial-gradient(circle, #ffffff 30%, #fbbf24 70%, rgba(251, 191, 36, 0) 100%);
+  background: radial-gradient(circle, #ffffff 35%, #fbbf24 70%, rgba(251, 191, 36, 0) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  box-shadow: 0 0 20px #fbbf24, 0 0 35px #f59e0b;
+  box-shadow: 0 0 16px #fbbf24, 0 0 28px #f59e0b;
   animation: pulseStar 1.8s infinite ease-in-out alternate;
   z-index: 5;
+  font-size: 11px;
+  font-weight: 800;
+  user-select: none;
 }
 
 .star-node.connected {

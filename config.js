@@ -58,8 +58,8 @@ const CONFIG = {
   // Task 1: Starlight Constellation
   constellation: {
     title: "Task 1 • Connect Our Starlight Destiny ✨",
-    subtitle: "Connect the cosmic stars to bind Basil (Kunjutan) & Nandini (Kunjuti)",
-    successMessage: "5 Years of Starlight Destiny Connected! 🌟"
+    subtitle: "Connect the cosmic stars in sequence to draw 'B' (Basil) & 'N' (Nandini)",
+    successMessage: "5 Years of Starlight Destiny (B ❤️ N) Connected! 🌟"
   },
 
   // Task 2: Cupid's Heart Resonance
@@ -302,17 +302,18 @@ const CONFIG = {
 
   // Task 11: Wax-Sealed Handwritten 5-Year Love Letter from Kunjutan
   letter: {
-    header: "My Dearest Kunjuti (Nandini),",
+    header: "My Dearest Kunjuti,",
     date: "September 10, 2026 • Exactly 1,826 Days Together",
     paragraphs: [
-      "Happy 5th Anniversary, my precious Kunjuti! ❤️ Today, on September 10, 2026, marks exactly 1,826 days since you entered my world and changed my life forever. Half a decade together. As I sit down to write this, my heart aches with an overwhelming mix of tenderness, deep remorse, and endless love.",
-      "1,826 days of our memories, our quiet moments, our late-night laughter, and everything we dreamed of building. But Kunjuti, I know in my heart that our journey recently has been so painful and heavy. We have had so many problems between us, fighting so hard through misunderstandings, and carrying hurts that have exhausted us both to the very bone. At times, the strain has brought us so close to the breaking point — to moments where breaking up felt like it was looming over us.",
-      "Before anything else, I need to look into your eyes and say this from the deepest, rawest part of my soul: I am so, so deeply sorry. I am sorry for every single way I have hurt you. I am sorry for the times my words were harsh or careless, when my stubbornness or pride got in the way, when I failed to understand your feelings, and for every silent tear you cried because of me. You trusted me with your fragile, beautiful heart, and the fact that I was ever the cause of your sorrow breaks me inside.",
-      "Please hear me when I say this, Kunjuti: I refuse to let us break up. I refuse to throw away 1,826 days of love, sacrifice, and history that we built together. A breakup is NOT our destiny. You are my home, my safe haven, my peace, and the only person I ever want to walk this life with. Through every fight, every misunderstanding, and every storm, my love for you has never wavered — not even for a fraction of a second.",
-      "I promise you with everything that I am: I will fix our problems. I will fix every mistake, listen to your heart with patience, heal the wounds between us, and become the man and the partner you truly deserve. We will face every challenge together instead of fighting each other. We have made it through five years because our love is real, and this hardship will only make us unbreakable.",
-      "Please hold my hand tightly, my Kunjuti. Don't let fear or pain tear us apart. Let this anniversary be our fresh beginning — where we leave the hurt behind, heal together, and grow stronger than we have ever been. 1,826 days completed, my forever love... and a lifetime of happiness ahead of us. I love you endlessly, and I am not letting go."
+      "Happy 5th Anniversary, my precious Kunjuti! ❤️ Today, on September 10, 2026, marks exactly 1,826 days since you entered my world and changed my life forever. Five whole years — half a decade of our lives entwined as one. As I sit here writing this to you, my hands are trembling, my chest aches with an overwhelming weight of emotion, and my eyes are filled with tears reflecting on everything we have walked through to reach this day.",
+      "Before I talk about the beauty of our journey, my Kunjuti, I need to open my heart completely and say something from the deepest, rawest part of my soul: I am so, so deeply sorry. I am truly sorry for all the times and all the ways I have hurt you. I am sorry for the moments my words were sharp and cold, when my temper or stubbornness blinded me, when I failed to listen to the quiet pain in your voice, and for every silent tear you cried alone because of me. You trusted me with your gentle, pure heart, and knowing that I was ever the reason for your pain breaks me completely.",
+      "Our relationship has been through so many difficult problems. We have fought through misunderstandings that felt impossible to solve, weathered storms that drained every bit of energy we had, and kept going even when everything around us was heavy, painful, and hard. We have solved so much together, but I know the honest truth — right now, we are still caught in problems with each other that hurt us deeply. Lately, things have felt so fragile and exhausting that some of our struggles have brought us dangerously close to the edge... close to talking about a breakup, close to losing the most precious bond we have ever known.",
+      "Kunjuti, the very thought of a breakup, of losing you, shatters my entire world into pieces. So please let this letter be my absolute reassurance to you: I will never give up on you, and I will never let our love break apart. A breakup is NOT our answer. We did not fight through 1,826 days of tears, memories, sacrifice, and unconditional love just to let our problems defeat us now. You are my safe place, my peace, my home, and the love of my life. My heart chose you five years ago, and through every struggle, every silence, and every tear, it has never stopped choosing you for even a single second.",
+      "I promise you with all the strength in my body and soul: I am going to fix this. I will fix every single problem that has grown between us. I will swallow my pride, control my temper, listen to your heart with tenderness, and put in whatever work is needed to heal the wounds between us. You will never have to face our problems alone again. I will protect you, cherish you, and treat you with the gentle patience and deep respect you have always deserved. Whatever is broken, we are going to repair it together, hand in hand.",
+      "We are not going to let this rough chapter be the end of our story. It is going to be the chapter where we learned to love each other even deeper, where our wounds healed, and where we emerged ten times stronger than we have ever been. No storm is bigger than the love that carried us through five years. Hold my hand tight, my Kunjuti. Let us wipe each other's tears, leave the bitterness behind, and step into our future stronger and closer than ever before.",
+      "1,826 days completed today, my sweet Kunjuti... and an unbreakable lifetime of happiness, peace, and love waiting for us ahead. I am right here by your side, and I am never letting you go. Happy 5th Anniversary, my forever love."
     ],
-    closing: "With all my love, my apologies, and my forever devotion,",
+    closing: "Forever & Always, With All My Love & Devotion,",
     signature: "Your Kunjutan (Basil) ❤️"
   }
 };

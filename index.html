@@ -159,20 +159,34 @@
         <span class="task-badge">Task 1 • Starlight Destiny</span>
         <h2 class="text-xl font-bold text-white mb-1">Connect Our 5-Year Stars ✨</h2>
         <p class="text-xs text-slate-300 text-center mb-2">
-          Connect all glowing stars in sequence (1 → 2 → 3 → 4) to bind Basil &amp; Nandini's celestial link!
+          Connect all glowing stars in sequence to draw 'B' (Basil) &amp; 'N' (Nandini) in starlight!
         </p>
 
         <!-- Constellation Board -->
-        <div id="constellation-board" class="relative w-[280px] h-[250px] my-2 bg-slate-950/40 rounded-2xl border border-white/10">
+        <div id="constellation-board" class="relative w-[300px] h-[250px] my-2 bg-slate-950/40 rounded-2xl border border-white/10 overflow-hidden">
           <svg id="constellation-svg" class="absolute inset-0 w-full h-full pointer-events-none"></svg>
-          <!-- 4 Star nodes forming the letter 'N' / Destiny -->
-          <div class="star-node" data-idx="1" style="top: 80%; left: 25%;"><span class="text-[10px] font-bold text-amber-900">1</span></div>
-          <div class="star-node" data-idx="2" style="top: 20%; left: 25%;"><span class="text-[10px] font-bold text-amber-900">2</span></div>
-          <div class="star-node" data-idx="3" style="top: 80%; left: 75%;"><span class="text-[10px] font-bold text-amber-900">3</span></div>
-          <div class="star-node" data-idx="4" style="top: 20%; left: 75%;"><span class="text-[10px] font-bold text-amber-900">4</span></div>
+          
+          <!-- Subtle Letter Guides & Central Heart -->
+          <div class="absolute top-2 left-3 text-[10px] uppercase font-bold text-amber-300/40 tracking-wider pointer-events-none">Letter B • Basil</div>
+          <div class="absolute top-2 right-3 text-[10px] uppercase font-bold text-pink-300/40 tracking-wider pointer-events-none">Letter N • Nandini</div>
+          <div id="constellation-heart" class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 text-rose-500/30 text-2xl font-bold transition-all duration-700 pointer-events-none select-none">❤️</div>
+
+          <!-- Letter 'B' Stars (Basil: 1 to 6) -->
+          <div class="star-node" data-idx="1" style="top: 80%; left: 14%;"><span class="text-[10px] font-bold text-amber-900">1</span></div>
+          <div class="star-node" data-idx="2" style="top: 22%; left: 14%;"><span class="text-[10px] font-bold text-amber-900">2</span></div>
+          <div class="star-node" data-idx="3" style="top: 22%; left: 38%;"><span class="text-[10px] font-bold text-amber-900">3</span></div>
+          <div class="star-node" data-idx="4" style="top: 51%; left: 24%;"><span class="text-[10px] font-bold text-amber-900">4</span></div>
+          <div class="star-node" data-idx="5" style="top: 78%; left: 38%;"><span class="text-[10px] font-bold text-amber-900">5</span></div>
+          <div class="star-node" data-idx="6" style="top: 80%; left: 22%;"><span class="text-[10px] font-bold text-amber-900">6</span></div>
+
+          <!-- Letter 'N' Stars (Nandini: 7 to 10) -->
+          <div class="star-node" data-idx="7" style="top: 80%; left: 63%;"><span class="text-[10px] font-bold text-amber-900">7</span></div>
+          <div class="star-node" data-idx="8" style="top: 22%; left: 63%;"><span class="text-[10px] font-bold text-amber-900">8</span></div>
+          <div class="star-node" data-idx="9" style="top: 80%; left: 87%;"><span class="text-[10px] font-bold text-amber-900">9</span></div>
+          <div class="star-node" data-idx="10" style="top: 22%; left: 87%;"><span class="text-[10px] font-bold text-amber-900">10</span></div>
         </div>
 
-        <p class="text-xs text-pink-300 h-5" id="constellation-status">Tap star 1 to begin...</p>
+        <p class="text-xs text-pink-300 h-5" id="constellation-status">Tap star 1 to draw 'B' for Basil...</p>
 
         <button class="btn-glow mt-3 opacity-50 pointer-events-none" id="btn-next-chapter-1">
           <span>Task Complete • Step into Task 2 🏹</span>
@@ -582,12 +596,12 @@
           <!-- Unfolded Handwritten Letter -->
           <div class="letter-parchment" id="letter-content">
             <div class="letter-date text-xs text-rose-800/80 font-bold mb-2 tracking-wide" id="letter-date">September 10, 2026 • Exactly 1,826 Days Together</div>
-            <div class="letter-title" id="letter-header">My Dearest Kunjuti (Nandini),</div>
+            <div class="letter-title" id="letter-header">My Dearest Kunjuti,</div>
             <div class="letter-body" id="letter-body">
               <!-- Paragraphs injected via config.js -->
             </div>
             <div class="letter-signature" id="letter-sig">
-              With all my love, my apologies, and my forever devotion,<br/>
+              Forever &amp; Always, With All My Love &amp; Devotion,<br/>
               <span class="font-bold text-rose-800">Your Kunjutan (Basil) ❤️</span>
             </div>
           </div>
