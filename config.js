@@ -130,11 +130,11 @@ const CONFIG = {
       title: "Where Our Magic Began ✨",
       theme: "The first nervous smiles, late-night calls, and the moment our worlds collided.",
       photos: [
-        { id: "y1_1", src: "assets/photos/y1_1.svg", caption: "Our first spark" },
-        { id: "y1_2", src: "assets/photos/y1_2.svg", caption: "Nervous first laughs" },
-        { id: "y1_3", src: "assets/photos/y1_3.svg", caption: "Late night conversations" },
-        { id: "y1_4", src: "assets/photos/y1_4.svg", caption: "Falling helplessly in love" },
-        { id: "y1_5", src: "assets/photos/y1_5.svg", caption: "The day you became my world" }
+        { id: "y1_1", src: "assets/photos/y1_1.jpg", caption: "Our first spark" },
+        { id: "y1_2", src: "assets/photos/y1_2.jpg", caption: "Nervous first laughs" },
+        { id: "y1_3", src: "assets/photos/y1_3.jpg", caption: "Late night conversations" },
+        { id: "y1_4", src: "assets/photos/y1_4.jpg", caption: "Falling helplessly in love" },
+        { id: "y1_5", src: "assets/photos/y1_5.jpg", caption: "The day you became my world" }
       ]
     },
     {
