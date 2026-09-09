@@ -58,7 +58,7 @@ const CONFIG = {
   // Task 1: Starlight Constellation
   constellation: {
     title: "Task 1 • Connect Our Starlight Destiny ✨",
-    subtitle: "Connect the cosmic stars in sequence to draw 'B' (Basil) & 'N' (Nandini)",
+    subtitle: "Connect the cosmic stars in sequence to draw 'B' & 'N' in starlight",
     successMessage: "5 Years of Starlight Destiny (B ❤️ N) Connected! 🌟"
   },
 
@@ -94,8 +94,8 @@ const CONFIG = {
         id: 1,
         question: "Who fell in love first between us? 👀",
         options: [
-          "Kunjutan (Basil)",
-          "Kunjuti (Nandini)",
+          "Kunjutan",
+          "Kunjuti",
           "Both at the exact same heartbeat ❤️"
         ],
         correctIndex: 2,

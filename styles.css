@@ -696,6 +696,7 @@ body {
   align-items: center;
   justify-content: center;
   perspective: 1200px;
+  margin-bottom: 24px;
 }
 
 .envelope-wrapper {
@@ -741,12 +742,12 @@ body {
 }
 
 .wax-seal::after {
-  content: 'N';
-  font-family: 'Cinzel', serif;
-  font-size: 26px;
-  font-weight: 800;
-  color: #fef08a;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  content: '❤️';
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .envelope-opened .envelope-flap {
@@ -762,21 +763,21 @@ body {
 /* Handwritten Letter Parchment */
 .letter-parchment {
   position: absolute;
-  top: 10px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%) translateY(0) scale(0.9);
-  width: 92%;
+  width: 95%;
   max-width: 360px;
-  max-height: 490px;
+  max-height: 360px;
   background: #fdfbf7;
   color: #1e1b4b;
-  padding: 24px 22px;
-  border-radius: 12px;
+  padding: 22px 20px 85px 20px;
+  border-radius: 14px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
   overflow-y: auto;
   opacity: 0;
   visibility: hidden;
-  z-index: 30;
+  z-index: 25;
   transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s;
   font-family: 'Caveat', cursive;
   scrollbar-width: thin;
@@ -796,7 +797,7 @@ body {
 .letter-parchment.visible {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(-30px) scale(1);
+  transform: translateX(-50%) translateY(0) scale(1);
 }
 
 .letter-date {
@@ -830,7 +831,9 @@ body {
   font-size: 22px;
   font-weight: 700;
   color: #991b1b;
-  margin-top: 16px;
+  margin-top: 24px;
+  margin-bottom: 20px;
+  padding-bottom: 25px;
 }
 
 /* Chapter 8: Grand Finale Fireworks */

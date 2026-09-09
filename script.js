@@ -675,19 +675,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (heart) {
           heart.className = "absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 text-rose-500 text-3xl font-bold transition-all duration-700 pointer-events-none select-none scale-125 drop-shadow-[0_0_12px_rgba(244,63,94,0.9)] animate-pulse";
         }
-        if (statusText) statusText.textContent = "✨ 'B' (Basil) Connected! Now tap star 7 for 'N' (Nandini)...";
+        if (statusText) statusText.textContent = "✨ 'B' connected! Now tap star 7 for 'N'...";
       } else if (connectedNodes.length === totalNodes) {
         // Complete!
-        if (statusText) statusText.textContent = "🌟 Task 1 Complete! Basil & Nandini (B ❤️ N) Celestial Link Sealed!";
+        if (statusText) statusText.textContent = "🌟 Task 1 Complete! B ❤️ N Celestial Link Sealed!";
         SoundFX.chime();
         SoundFX.harpGliss();
         confetti({ particleCount: 50, spread: 70, origin: { y: 0.6 } });
         const nextBtn = document.getElementById('btn-next-chapter-1');
         if (nextBtn) nextBtn.classList.remove('opacity-50', 'pointer-events-none');
       } else if (idx < 6) {
-        if (statusText) statusText.textContent = `Drawing 'B' (Basil)... Tap star ${idx + 1}`;
+        if (statusText) statusText.textContent = `Drawing 'B'... Tap star ${idx + 1}`;
       } else {
-        if (statusText) statusText.textContent = `Drawing 'N' (Nandini)... Tap star ${idx + 1}`;
+        if (statusText) statusText.textContent = `Drawing 'N'... Tap star ${idx + 1}`;
       }
     }
   }
@@ -1568,7 +1568,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dateEl && CONFIG.letter.date) {
       dateEl.textContent = CONFIG.letter.date;
     }
-    document.getElementById('letter-header').textContent = CONFIG.letter.header;
+    let cleanHeader = (CONFIG.letter.header || "My Dearest Kunjuti,").replace(/\s*\([^\)]*nandini[^\)]*\)/gi, '').trim();
+    document.getElementById('letter-header').textContent = cleanHeader;
     const bodyBox = document.getElementById('letter-body');
     bodyBox.innerHTML = '';
     CONFIG.letter.paragraphs.forEach(p => {
@@ -1589,6 +1590,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       envelope.classList.add('envelope-opened');
       letter.classList.add('visible');
+      const stage = document.getElementById('envelope-stage');
+      if (stage) stage.classList.add('opened');
 
       confetti({
         particleCount: 55,
