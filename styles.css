@@ -764,10 +764,10 @@ body {
   transform: translateX(-50%) translateY(0) scale(0.9);
   width: 92%;
   max-width: 360px;
-  max-height: 480px;
+  max-height: 490px;
   background: #fdfbf7;
   color: #1e1b4b;
-  padding: 28px 24px;
+  padding: 24px 22px;
   border-radius: 12px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
   overflow-y: auto;
@@ -776,6 +776,17 @@ body {
   z-index: 30;
   transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s;
   font-family: 'Caveat', cursive;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(153, 27, 27, 0.3) transparent;
+}
+
+.letter-parchment::-webkit-scrollbar {
+  width: 5px;
+}
+
+.letter-parchment::-webkit-scrollbar-thumb {
+  background: rgba(153, 27, 27, 0.3);
+  border-radius: 9999px;
 }
 
 .envelope-opened + .letter-parchment,
@@ -785,11 +796,20 @@ body {
   transform: translateX(-50%) translateY(-30px) scale(1);
 }
 
+.letter-date {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #991b1b;
+  opacity: 0.85;
+}
+
 .letter-title {
   font-size: 26px;
   font-weight: 700;
   color: #991b1b;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .letter-body {
@@ -1313,15 +1333,27 @@ body {
    TASK 6: SCRATCH-TO-REVEAL 5 SECRET LOVE COUPONS
    ========================================================== */
 .coupon-tab-btn {
-  padding: 5px 12px;
+  min-width: 36px;
+  height: 32px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 9999px;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #cbd5e1;
   transition: all 0.3s ease;
   white-space: nowrap;
+  cursor: pointer;
+}
+
+.coupon-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(251, 191, 36, 0.4);
+  color: #fff;
 }
 
 .coupon-tab-btn.active {
@@ -1329,6 +1361,7 @@ body {
   color: #fff;
   border-color: #fbbf24;
   box-shadow: 0 0 12px rgba(244, 63, 94, 0.5);
+  transform: scale(1.05);
 }
 
 .coupon-voucher {

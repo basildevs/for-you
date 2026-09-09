@@ -18,8 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Real Audio Player with MP3 files
   let audioPlayer = null;
   const musicTracks = [
-    { name: "Gymnopédie No. 1", path: CONFIG.music.filePath || "assets/audio/soothing_romantic.mp3" },
-    { name: "Canon in D Major", path: CONFIG.music.secondaryPath || "assets/audio/canon_in_d.mp3" }
+    { name: "Canon in D Major", path: CONFIG.music.filePath || "assets/audio/canon_in_d.mp3" }
   ];
   let currentTrackIdx = 0;
 
@@ -31,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
       audioPlayer.volume = 0.65;
       audioPlayer.preload = 'auto';
     }
+    const badge = document.getElementById('track-name-badge');
+    if (badge) badge.textContent = musicTracks[currentTrackIdx].name;
   }
 
   // Initialize Audio Context on user interaction
@@ -1543,6 +1544,10 @@ document.addEventListener('DOMContentLoaded', () => {
     envelope.classList.remove('envelope-opened');
     letter.classList.remove('visible');
 
+    const dateEl = document.getElementById('letter-date');
+    if (dateEl && CONFIG.letter.date) {
+      dateEl.textContent = CONFIG.letter.date;
+    }
     document.getElementById('letter-header').textContent = CONFIG.letter.header;
     const bodyBox = document.getElementById('letter-body');
     bodyBox.innerHTML = '';
@@ -1551,6 +1556,11 @@ document.addEventListener('DOMContentLoaded', () => {
       pEl.textContent = p;
       bodyBox.appendChild(pEl);
     });
+
+    const sigBox = document.getElementById('letter-sig');
+    if (sigBox && CONFIG.letter.closing && CONFIG.letter.signature) {
+      sigBox.innerHTML = `${CONFIG.letter.closing}<br/><span class="font-bold text-rose-800">${CONFIG.letter.signature}</span>`;
+    }
 
     waxSeal.onclick = () => {
       SoundFX.pop();

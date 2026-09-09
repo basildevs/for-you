@@ -21,6 +21,9 @@ const CONFIG = {
     herPetName: "Kunjuti",
     anniversaryYears: 5,
     tagline: "5 Magical Years Together • Basil & Nandini ✨",
+    anniversaryDate: "September 10, 2021",
+    celebrationDate: "September 10, 2026",
+    totalDays: "1,826",
     startYear: "2021",
     currentYear: "2026"
   },
@@ -38,20 +41,18 @@ const CONFIG = {
 
   // Audio Settings
   music: {
-    title: "Gymnopédie No. 1 • Soothing Romantic Piano",
+    title: "Canon in D Major • Romantic Piano",
     useFile: true,
-    filePath: "assets/audio/soothing_romantic.mp3",
-    secondaryTitle: "Canon in D • Romantic Strings & Piano",
-    secondaryPath: "assets/audio/canon_in_d.mp3"
+    filePath: "assets/audio/canon_in_d.mp3"
   },
 
   // Romantic Love Quotes for Transitions & Tasks
   quotes: [
-    "5 years of falling for you more and more each sunrise.",
-    "In a universe of chaos, your arms are my only home.",
-    "Half a decade of loving my Kunjuti — and forever still wouldn't be enough.",
-    "Every love story is beautiful, but ours is my favorite fairy tale.",
-    "You are not just my love, you are the beat inside my chest."
+    "5 years of choosing you every single sunrise.",
+    "September 10, 2021 was the day my universe became complete.",
+    "1,826 days of loving you — and I would choose you in every lifetime.",
+    "Through every storm and every tear, your hand is the only one I will hold.",
+    "We are stronger than our problems, and our forever has just begun."
   ],
 
   // Task 1: Starlight Constellation
@@ -294,23 +295,24 @@ const CONFIG = {
   // Task 10: Anniversary Cake with 5 Candles
   cake: {
     title: "Task 10 • 5 Candles For 5 Years of Love 🎂",
-    subtitle: "5 candles glowing for our 5 beautiful years. Close your eyes, make our anniversary wish, and blow them out together!",
-    flamesText: "✨ 5 flames are glowing for our 5 years together...",
-    blownText: "🎉 Your wish is blessed by the heavens! Happy 5th Anniversary, My Kunjuti! ❤️"
+    subtitle: "5 candles glowing for our 1,826 days together. Close your eyes, make our anniversary wish, and blow them out together!",
+    flamesText: "✨ 5 flames are glowing for 1,826 days of love (September 10, 2021 – 2026)...",
+    blownText: "🎉 Happy 5th Anniversary, My Kunjuti! Here is to fixing every storm and loving you forever! ❤️"
   },
 
   // Task 11: Wax-Sealed Handwritten 5-Year Love Letter from Kunjutan
   letter: {
     header: "My Dearest Kunjuti (Nandini),",
-    date: "5 Beautiful Years Together • 2021 – 2026",
+    date: "September 10, 2026 • Exactly 1,826 Days Together",
     paragraphs: [
-      "Happy 5th Anniversary, my precious Kunjuti! ❤️",
-      "As I look back at the past five years, my heart fills with endless gratitude and butterflies all over again. Can you believe it has been half a decade since you walked into my life and turned it into the most beautiful fairy tale? 1,825 days of your laughter, your gentle care, your cute silly expressions, and the warmth that only you can give me.",
-      "Every single time I call you 'Kunjuti', it reminds me how deeply lucky I am. You are not just the love of my life, you are my peace, my safest haven, and the strongest pillar in my world. Through all the smiles, the quiet moments, the late-night talks, and every storm we weathered hand-in-hand, you made every single second worth living.",
-      "Thank you for choosing me every single day. Thank you for loving your Kunjutan with all your heart, for believing in us, and for making our bond stronger with every passing sunrise. Five years have flown by like a heartbeat, yet every moment with you is etched into my soul forever.",
-      "I promise to always hold your hand tightly, to protect your smile, to wipe away every tear, and to love you more deeply with each new tomorrow. 5 beautiful years completed, my Kunjuti... and a lifetime of forever waiting for us."
+      "Happy 5th Anniversary, my precious Kunjuti! ❤️ Today, on September 10, 2026, marks exactly 1,826 days since you entered my world and changed my life forever. Half a decade together. As I sit down to write this, my heart aches with an overwhelming mix of tenderness, deep remorse, and endless love.",
+      "1,826 days of our memories, our quiet moments, our late-night laughter, and everything we dreamed of building. But Kunjuti, I know in my heart that our journey recently has been so painful and heavy. We have had so many problems between us, fighting so hard through misunderstandings, and carrying hurts that have exhausted us both to the very bone. At times, the strain has brought us so close to the breaking point — to moments where breaking up felt like it was looming over us.",
+      "Before anything else, I need to look into your eyes and say this from the deepest, rawest part of my soul: I am so, so deeply sorry. I am sorry for every single way I have hurt you. I am sorry for the times my words were harsh or careless, when my stubbornness or pride got in the way, when I failed to understand your feelings, and for every silent tear you cried because of me. You trusted me with your fragile, beautiful heart, and the fact that I was ever the cause of your sorrow breaks me inside.",
+      "Please hear me when I say this, Kunjuti: I refuse to let us break up. I refuse to throw away 1,826 days of love, sacrifice, and history that we built together. A breakup is NOT our destiny. You are my home, my safe haven, my peace, and the only person I ever want to walk this life with. Through every fight, every misunderstanding, and every storm, my love for you has never wavered — not even for a fraction of a second.",
+      "I promise you with everything that I am: I will fix our problems. I will fix every mistake, listen to your heart with patience, heal the wounds between us, and become the man and the partner you truly deserve. We will face every challenge together instead of fighting each other. We have made it through five years because our love is real, and this hardship will only make us unbreakable.",
+      "Please hold my hand tightly, my Kunjuti. Don't let fear or pain tear us apart. Let this anniversary be our fresh beginning — where we leave the hurt behind, heal together, and grow stronger than we have ever been. 1,826 days completed, my forever love... and a lifetime of happiness ahead of us. I love you endlessly, and I am not letting go."
     ],
-    closing: "With every beat of my heart, Forever & Always,",
+    closing: "With all my love, my apologies, and my forever devotion,",
     signature: "Your Kunjutan (Basil) ❤️"
   }
 };
