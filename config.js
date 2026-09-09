@@ -143,11 +143,11 @@ const CONFIG = {
       title: "Growing Closer & Deeper 💖",
       theme: "Learning each other's habits, cute silly fights, and realizing we are soulmates.",
       photos: [
-        { id: "y2_1", src: "assets/photos/y2_1.svg", caption: "Unfiltered silliness" },
-        { id: "y2_2", src: "assets/photos/y2_2.svg", caption: "Comfort in your presence" },
-        { id: "y2_3", src: "assets/photos/y2_3.svg", caption: "Sweetest memories made" },
-        { id: "y2_4", src: "assets/photos/y2_4.svg", caption: "Holding hands tighter" },
-        { id: "y2_5", src: "assets/photos/y2_5.svg", caption: "Knowing you are the one" }
+        { id: "y2_1", src: "assets/photos/y2_1.jpg", caption: "Unfiltered silliness" },
+        { id: "y2_2", src: "assets/photos/y2_2.jpg", caption: "Comfort in your presence" },
+        { id: "y2_3", src: "assets/photos/y2_3.jpg", caption: "Sweetest memories made" },
+        { id: "y2_4", src: "assets/photos/y2_4.jpg", caption: "Holding hands tighter" },
+        { id: "y2_5", src: "assets/photos/y2_5.jpg", caption: "Knowing you are the one" }
       ]
     },
     {
