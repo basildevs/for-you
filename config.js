@@ -182,11 +182,11 @@ const CONFIG = {
       title: "Half A Decade Of Forever ♾️",
       theme: "5 glorious years of you and me. Mature love, unbreakable trust, and excitement for forever.",
       photos: [
-        { id: "y5_1", src: "assets/photos/y5_1.svg", caption: "5 years of pure bliss" },
-        { id: "y5_2", src: "assets/photos/y5_2.svg", caption: "Still giving me butterflies" },
-        { id: "y5_3", src: "assets/photos/y5_3.svg", caption: "Growing together daily" },
-        { id: "y5_4", src: "assets/photos/y5_4.svg", caption: "5 years of holding you close" },
-        { id: "y5_5", src: "assets/photos/y5_5.svg", caption: "To our next 50 years" }
+        { id: "y5_1", src: "assets/photos/y5_1.jpg", caption: "5 years of pure bliss" },
+        { id: "y5_2", src: "assets/photos/y5_2.webp", caption: "Still giving me butterflies" },
+        { id: "y5_3", src: "assets/photos/y5_3.jpg", caption: "Growing together daily" },
+        { id: "y5_4", src: "assets/photos/y5_4.jpg", caption: "5 years of holding you close" },
+        { id: "y5_5", src: "assets/photos/y5_5.jpg", caption: "To our next 50 years" }
       ]
     }
   ],
