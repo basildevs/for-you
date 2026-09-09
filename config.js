@@ -156,11 +156,11 @@ const CONFIG = {
       title: "Our Unbreakable Bond 💫",
       theme: "Standing by each other through thick and thin, building our own little universe.",
       photos: [
-        { id: "y3_1", src: "assets/photos/y3_1.svg", caption: "Through every storm" },
-        { id: "y3_2", src: "assets/photos/y3_2.svg", caption: "My biggest cheerleader" },
-        { id: "y3_3", src: "assets/photos/y3_3.svg", caption: "Pure warmth and peace" },
-        { id: "y3_4", src: "assets/photos/y3_4.svg", caption: "Sunset dreams together" },
-        { id: "y3_5", src: "assets/photos/y3_5.svg", caption: "Three years of blessings" }
+        { id: "y3_1", src: "assets/photos/y3_1.jpg", caption: "Through every storm" },
+        { id: "y3_2", src: "assets/photos/y3_2.jpg", caption: "My biggest cheerleader" },
+        { id: "y3_3", src: "assets/photos/y3_3.webp", caption: "Pure warmth and peace" },
+        { id: "y3_4", src: "assets/photos/y3_4.webp", caption: "Sunset dreams together" },
+        { id: "y3_5", src: "assets/photos/y3_5.jpg", caption: "Three years of blessings" }
       ]
     },
     {
